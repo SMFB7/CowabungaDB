@@ -36,7 +36,7 @@ struct CowabungaApp: App {
 #if targetEnvironment(simulator)
 #else
                     // fix Issue #300 | If ForceMDC is enabled it will override 16.2 unsupported limitation, for Beta users.
-                    if #available(iOS 16.2, *), UserDefaults.standard.bool(forKey: "ForceMDC") == false {
+                    if #available(iOS 16.3, *), UserDefaults.standard.bool(forKey: "ForceMDC") == false {
                         UIApplication.shared.alert(title: "Not Supported", body: "This version of iOS is not supported.")
                     } else {
                         do {
